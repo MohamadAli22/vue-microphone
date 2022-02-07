@@ -29,10 +29,12 @@ export default {
     const SUCCESS_MESSAGE = "Successfully recorded your story!";
     const SUCCESS_MESSAGE_SUBMIT = "Successfully submitted audio message! Thank you!";
     const ERROR_SUBMITTING_MESSAGE = "Error submitting audio message! Please try again later.";
+    const INSTRUCTION_INIT_MESSAGE = "Initializing...";
 
     const MP3_FORMAT = "mp3";
 
     const initRecorder = ()=>{
+      state.instructionMessage = INSTRUCTION_INIT_MESSAGE;
       state.recordedAudio = undefined
       state.recording = true;
       state.recorder.start();
@@ -65,7 +67,7 @@ export default {
 
     const myRecorder = new Recorder({
         micFailed: micFailedFunc,
-        bitRate: 128,
+        bitRate: 92,
         sampleRate: 44100,
         format: MP3_FORMAT,
       });
